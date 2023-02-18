@@ -2,7 +2,7 @@ const express=require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose=require('mongoose');
-
+const userModel=require("./models/signup");
 const app = express();
 const port = 5000;
 const spawner=require('child_process').spawn;
@@ -26,5 +26,20 @@ db.once("open", function () {
 });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.post("/",async(req,res)=>{
+    const {first,last,email,Language,password}=await req.body
+    const user= new userModel({
+        _id:new mongoose.Types.ObjectId,
+        first:first,
+        last:last,
+        email:email,
+        Language:Language,
+        password:password
+    })
+    user.save().then(use => {
+        console.log(`${use} has registered successfully`)
+    }).catch(err => {console.log(`unable to register`, err)})
+    .then((response)=>console.log(response))
 
+})
 app.listen(port, () => console.log(`Hello world app listening on port ${port}!`))

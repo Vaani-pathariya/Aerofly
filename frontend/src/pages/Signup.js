@@ -25,8 +25,21 @@ const Signup=()=>{
     const handle_confirm=(event)=>{
         setConfirm(event.target.value);
     }
-    const handle_click=(event)=>{
+    const handle_click=async (event)=>{
         event.preventDefault();
+        const add=await fetch("http://localhost:5000/",{
+            method:'POST',
+            headers:{'Content-Type': 'application/json'},
+            body:JSON.stringify({
+                first:first,
+                last:last,
+                email:email,
+                Language:Language,
+                password:password
+            })
+        }).then(()=>{
+            console.log(add)
+        })
     };
     return (
         <div className="signup">
