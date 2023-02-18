@@ -48,3 +48,8 @@
     border-radius: 4px;
     font-size: larger;
 }
+a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}

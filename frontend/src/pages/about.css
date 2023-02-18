@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+.About-wrapper{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+.About-wrapper img{
+    max-width: 100%;
+}
+.About-wrapper h1{
+    font-family: 'Gloock', serif;
+}
+.About-wrapper h3{
+    font-size: larger;
+}

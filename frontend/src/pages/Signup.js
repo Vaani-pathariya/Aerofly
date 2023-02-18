@@ -42,7 +42,7 @@ const Signup=()=>{
             </input>
             <input className="entry" type="password" placeholder="Password" onChange={handle_pass} value={password}></input>
             <input className="entry" type="password" placeholder="Confirm Password" onChange={handle_confirm} value={confirm}></input><br></br>
-            <button className="signup-final-button" onClick={handle_click}>Lets go</button> OR <button className="signup-final-button">Sign In</button>
+            <button className="signup-final-button" onClick={handle_click}>Lets go</button> OR <Link to="/signin"><button className="signup-final-button">Sign In</button></Link>
                 </div>
             <h3>OR</h3>
             <Link to="/prediction"><button className="signup-final-button">Move to Predictions</button></Link>

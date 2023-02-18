@@ -5,6 +5,8 @@ import {Route,Routes} from "react-router-dom"
 import "./app.css"
 import Prediction from "./pages/Prediction";
 import Signup from "./pages/Signup";
+import Signin from "./pages/Signin";
+import About from "./pages/About";
 function App() {
   const [loading,setLoading]=useState(false);
   useEffect(()=>{
@@ -23,6 +25,8 @@ function App() {
          <Route exact path="/" element={<Main/>}>
           <Route path="" element={<Signup/>}></Route>
           <Route path="prediction" element={<Prediction/>}></Route>
+          <Route path="signin" element={<Signin/>}></Route>
+          <Route path="about" element={<About/>}></Route>
          </Route>
         </Routes>
       }
