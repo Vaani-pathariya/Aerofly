@@ -27,6 +27,7 @@ const Prediction =()=>{
     const handle_click=(event)=>{
         event.preventDefault();
         response()
+
     };
     const [display,setDisplay]=useState("");
     const [ans,setAns]=useState(true)
@@ -44,9 +45,9 @@ const Prediction =()=>{
                 <h2>Enter parameters:</h2>
                 <input className="entry" type="text" placeholder="Enter Time in 24 hour clock time" onChange={handle_time} value={time}></input>
                 <input className="entry" type="text" placeholder="Enter the length of the flight" onChange={handle_length} value={length}></input>
-                <input className="entry" type="text" placeholder="Airline Name" onChange={handle_airline} value={airline}></input>
-                <input className="entry" type="text" placeholder="Airline From" onChange={handle_from} value={from}></input>
-                <input className="entry" type="text" placeholder="Airline To" onChange={handle_to} value={to}></input>
+                <input className="entry" type="text" placeholder="Airline Name(enter the airline code)" onChange={handle_airline} value={airline}></input>
+                <input className="entry" type="text" placeholder="Airline From(enter the airport code)" onChange={handle_from} value={from}></input>
+                <input className="entry" type="text" placeholder="Airline To(enter the airport code)" onChange={handle_to} value={to}></input>
                 <input className="entry" type="text" placeholder="Day of week (1 for Monday and so on)" onChange={handle_day} value={day}></input>
                 <button className="prediction-final-button" onClick={handle_click}>Predict</button><br></br>
                 <button className="prediction-final-button">{display}</button>

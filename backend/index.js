@@ -4,8 +4,13 @@ const cors = require('cors');
 const mongoose=require('mongoose');
 
 const app = express();
-const port = 3001;
-
+const port = 5000;
+const spawner=require('child_process').spawn;
+const data_to_pass=["hello","i vaani"]
+const python_process=spawner('python',['./test.py',JSON.stringify(data_to_pass)])
+python_process.stdout.on('data',(data)=>{
+    console.log('data received',data.toString());
+});
 app.use(cors());
 mongoose.connect('mongodb+srv://vaani:vaani@cluster0.t8e1ct1.mongodb.net/?retryWrites=true&w=majority',
     {
