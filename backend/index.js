@@ -7,7 +7,7 @@ const app = express();
 const port = 3001;
 
 app.use(cors());
-mongoose.connect('',
+mongoose.connect('mongodb+srv://vaani:vaani@cluster0.t8e1ct1.mongodb.net/?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true

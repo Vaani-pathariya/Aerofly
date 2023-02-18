@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState,useEffect } from "react"; 
+import Loading from "./pages/Loading";
+import Main from "./pages/Main";
+import {Route,Routes} from "react-router-dom"
+import "./app.css"
+import Prediction from "./pages/Prediction";
+import Signup from "./pages/Signup";
 function App() {
+  const [loading,setLoading]=useState(false);
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false);
+    },6000)
+  },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        loading ?
+        <Loading/>
+        :
+        <Routes>
+         <Route exact path="/" element={<Main/>}>
+          <Route path="" element={<Signup/>}></Route>
+          <Route path="prediction" element={<Prediction/>}></Route>
+         </Route>
+        </Routes>
+      }
     </div>
   );
 }

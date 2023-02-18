@@ -1,0 +1,50 @@
+.main-nav{
+    color: #5065A8;
+    display: flex;
+    width: 98%;
+    justify-content: space-between;
+    margin: 2%;
+}
+.main-nav img{
+    width: 10%;
+    margin: 0;
+    padding: 0;
+}
+.main-nav h2{
+    padding-right: 3%;
+    margin: 0;
+}
+.main{
+    margin: 0;padding: 0;
+}
+.signup{
+     text-align: center;
+}
+.wrapper-signup{
+    margin: 0 auto ;
+    width: 60%;
+    padding-top: 2px;
+    border-radius: 10px;
+    background-color: #F2EEE4;
+    padding-bottom: 2px;
+}
+.entry{
+    width: 80%;
+    background-color: #e6cc8d;
+    border-style: none;
+    border-radius: 5px;
+    padding: 3%;
+    margin: 1%;
+}
+::placeholder{
+    color: rgba(48, 45, 43, 0.652);
+    font-size: larger;
+}
+.signup-final-button{
+    margin: 1%;
+    background-color: #db8872;
+    border-style: none;
+    padding: 2%;
+    border-radius: 4px;
+    font-size: larger;
+}
