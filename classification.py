@@ -10,4 +10,4 @@ x=one_hot_encoded_data.loc[:,var_columns]
 y=one_hot_encoded_data.loc[:,'Class']
 clf = RandomForestClassifier(criterion="gini",max_depth=100,min_samples_split=10,random_state=5)
 clf.fit(x,y)
-clf.save('airline_predict.model')
+clf.save('airline.model')
