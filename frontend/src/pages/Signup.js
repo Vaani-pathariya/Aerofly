@@ -4,7 +4,7 @@ const Signup=()=>{
     const [first,setFirst]=useState("")
     const [last,setLast]=useState("")
     const [email,setEmail]=useState("")
-    const [country,setCompany]=useState("")
+    const [Language,setLanguage]=useState("")
     const [password,setPassword]=useState("")
     const [confirm,setConfirm]=useState("")
     const handle_first=(event)=>{
@@ -16,8 +16,8 @@ const Signup=()=>{
     const handle_email=(event)=>{
         setEmail(event.target.value);
     }
-    const handle_country=(event)=>{
-        setCompany(event.target.value);
+    const handle_language=(event)=>{
+        setLanguage(event.target.value);
     }
     const handle_pass=(event)=>{
         setPassword(event.target.value);
@@ -38,7 +38,7 @@ const Signup=()=>{
             </input>
             <input className="entry" type="email" placeholder="Email" onChange={handle_email} value={email}>
             </input>
-            <input className="entry" type="text" placeholder="Country" onChange={handle_country} value={country}>
+            <input className="entry" type="text" placeholder="Language" onChange={handle_language} value={Language}>
             </input>
             <input className="entry" type="password" placeholder="Password" onChange={handle_pass} value={password}></input>
             <input className="entry" type="password" placeholder="Confirm Password" onChange={handle_confirm} value={confirm}></input><br></br>

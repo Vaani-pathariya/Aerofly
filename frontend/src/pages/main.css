@@ -17,10 +17,10 @@
 .main{
     margin: 0;padding: 0;
 }
-.signup{
+.signup,.prediction{
      text-align: center;
 }
-.wrapper-signup{
+.wrapper-signup,.wrapper-prediction{
     margin: 0 auto ;
     width: 60%;
     padding-top: 2px;
@@ -40,7 +40,7 @@
     color: rgba(48, 45, 43, 0.652);
     font-size: larger;
 }
-.signup-final-button{
+.signup-final-button,.prediction-final-button{
     margin: 1%;
     background-color: #db8872;
     border-style: none;
