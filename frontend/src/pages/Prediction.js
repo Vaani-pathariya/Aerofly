@@ -24,14 +24,36 @@ const Prediction =()=>{
     const handle_day=(event)=>{
         setDay(event.target.value);
     }
-    const handle_click=(event)=>{
+    const handle_click=async(event)=>{
         event.preventDefault();
+        const str=time+" "+length+" "+day+" "+"Airline_"+airline.toUpperCase()+" "+"AirportFrom_"+from.toUpperCase()+" "+"AirportTo_"+to.toUpperCase();
+        console.log(str)
+        const add=await fetch("http://localhost:5000/predict",{
+            method:'POST',
+            headers:{'Content-Type': 'application/json'},
+            body:JSON.stringify({
+                string:str
+            })
+        }).then(()=>{
+            console.log(add)
+        })
         response()
 
     };
     const [display,setDisplay]=useState("");
     const [ans,setAns]=useState(true)
     const response =()=>{
+        fetch("http://localhost:5000/predict",{method:"GET"})
+            .then(res=>res.json())
+            .then((res)=>{
+                if (res==0){
+                    setAns(false)
+                }
+                else{
+                    setAns(true)
+                }
+                console.log(res)
+            })
         if(ans){
             setDisplay("The flight will be delayed")
         }
